@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/persistence/persistence_2_1.xsd">
+	
+	<persistence-unit name="jpatest">
+		<properties>
+			<!-- 필수 속성 -->
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+			<property name="javax.persistence.jdbc.user" value="sa"/>
+			<property name="javax.persistence.jdbc.password" value=""/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>	<!-- 데이터베이스 방언 -->
+						
+			<!-- 옵션 -->
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>
+			<property name="hibernate.use_sql_comments" value="true"/>
+			<!-- 키 자동 생성 전략 -->
+			<property name="hibernate.id.new_generator_mappings" value="true"/>
+			<!-- 스키마 자동생성 기능 -->
+			<!-- 애플리케이션 실행시점에 데이터베이스 테이블을 자동으로 생성 -->
+			<!-- <property name="hibernate.hbm2ddl.auto" value="create"/> -->
+			<!-- 이름 매핑 전략 변경 : 카멜표기법을 언더스코어 표기법으로 매핑 -->
+			<!-- <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/> -->
+		</properties>
+	</persistence-unit>
+	
+</persistence>
